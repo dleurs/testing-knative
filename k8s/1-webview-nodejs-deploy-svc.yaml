@@ -27,6 +27,8 @@ spec:
             value: "mongodb://root:GOMy2VxWaH@release-1-mongodb.default.svc.cluster.local:27017/todoProject?authSource=admin"
           - name: MD5HASHURL
             value: "http://hash-md5.default.svc.cluster.local"
+          - name: SHA1HASHURL
+            value: "http://hash-sha1.default.svc.cluster.local"
         resources: {}
 status: {}
 ---
