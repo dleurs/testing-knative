@@ -1,6 +1,5 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import crypto from 'crypto';
 
 const app: express.Application = express();
 app.use(bodyParser.urlencoded({extended: false}));
@@ -8,8 +7,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.get('/:msg', (req, res, _) => // _ = next
 {
   const msg: string = req.params.msg;
-  const msgSha1: string = crypto.createHash('sha1').update(msg).digest("hex");
-  res.json({message: msgSha1});
+  const msgBuffer: string = Buffer.from(msg).toString('base64')
+  res.json({message: msgBuffer});
 });
 
 //const hostname: string = process.env.HOST_ADDR || "0.0.0.0";

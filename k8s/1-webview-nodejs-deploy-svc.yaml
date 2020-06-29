@@ -16,7 +16,7 @@ spec:
         app: nodejs-mongodb
     spec:
       containers:
-      - image: dleurs/webview-nodejs:1.0.1
+      - image: dleurs/webview-nodejs:1.0.2
         name: nodejs-mongodb
         ports:
         - containerPort: 8080

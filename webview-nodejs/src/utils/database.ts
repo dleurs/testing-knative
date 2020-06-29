@@ -23,6 +23,7 @@ export async function mongoConnect()
         catch (err)
         {
             console.log('Error connecting to MongoDB, retrying in 1 second')
+            console.log(err);
             await new Promise(resolve => setTimeout(resolve, 1000))
         }
     }
