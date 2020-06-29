@@ -16,7 +16,7 @@ spec:
         app: nodejs-mongodb
     spec:
       containers:
-      - image: dleurs/nodejs-mongodb-todo-app:2.0.1
+      - image: dleurs/webview-nodejs:1.0.0
         name: nodejs-mongodb
         ports:
         - containerPort: 8080
@@ -24,7 +24,7 @@ spec:
           - name: PORT
             value: "8080"
           - name: DBURL
-            value: "mongodb://root:n9CabYrdK6@my-release-mongodb.default.svc.cluster.local:27017/myProject?authSource=admin"
+            value: "mongodb://root:GOMy2VxWaH@my-release-mongodb.default.svc.cluster.local:27017/todoProject?authSource=admin"
           - name: MD5HASHURL
             value: "http://hash-md5.default.svc.cluster.local"
         resources: {}
