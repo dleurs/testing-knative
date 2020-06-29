@@ -1,5 +1,6 @@
-# helm install 
-# helm template my-release bitnami/mongodb --debug --dry-run > mongodb-k8s.yaml
+# helm template my-release bitnami/mongodb --debug --dry-run > 1-mongodb-k8s.yaml; kubectl create -f 1-mongodb-k8s.yaml;
+# or
+# helm repo add bitnami https://charts.bitnami.com/bitnami; helm install my-release bitnami/mongodb;
 ---
 # Source: mongodb/templates/serviceaccount.yaml
 apiVersion: v1
