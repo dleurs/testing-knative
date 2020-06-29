@@ -2,6 +2,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { todoRoutes } from './routes/todos';
+import { hashRoutes } from './routes/hashs';
 import { mongoConnect } from './utils/database';
 //import { Todo } from './models/todo';
 
@@ -9,6 +10,7 @@ const app: express.Application = express();
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(todoRoutes);
+app.use(hashRoutes);
 
 //const hostname: string = process.env.HOST_ADDR || "0.0.0.0";
 const port: string = process.env.PORT || "8080";

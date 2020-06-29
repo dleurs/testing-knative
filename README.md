@@ -16,6 +16,10 @@ helm install my-release bitnami/mongodb;
 export MONGODB_ROOT_PASSWORD=$(kubectl get secret --namespace default release-1-mongodb -o jsonpath="{.data.mongodb-root-password}" | base64 --decode);
 echo $MONGODB_ROOT_PASSWORD;
 ```
+Wait a bit, then test that the database is running fine :
+```bash
+kubectl run --namespace default release-1-mongodb-client --rm --tty -i --restart='Never' --image docker.io/bitnami/mongodb:4.2.8-debian-10-r7 --command -- mongo admin --host release-1-mongodb --authenticationDatabase admin -u root -p $MONGODB_ROOT_PASSWORD
+```
 Copy/Paste the password into k8s/1-webview-nodejs-deploy-svc.yaml
 ```bash
 - name: DBURL
